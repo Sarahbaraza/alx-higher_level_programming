@@ -1,30 +1,24 @@
+#include <stdlib.h>
 #include "lists.h"
-
 /**
- * check_cycle - checks if listint_t list loops on itself
- * @list: list to check for loops
- * Return: 1 if loops, 0 if not
- **/
-
+ * check_cycle - Checks if a singly-linked list contains a cycle.
+ * @list: A singly-linked list.
+ * Return: If there is no cycle - 0.
+ * If there is a cycle - 1.
+ */
 int check_cycle(listint_t *list)
 {
-listint_t *ptr, *end;
-if (list == NULL)
+listint_t *turtle, *hare;
+if (list == NULL || list->next == NULL)
 return (0);
-ptr = list;
-end = ptr->next;
-if (end == NULL)
-return (0);
-while (1)
+turtle = list->next;
+hare = list->next->next;
+while (turtle && hare && hare->next)
 {
-if (end == ptr)
+if (turtle == hare)
 return (1);
-end = end->next;
-if (end == NULL)
-return (0);
-end = end->next;
-if (end == NULL)
-return (0);
-ptr = ptr->next;
+turtle = turtle->next;
+hare = hare->next->next;
 }
+return (0);
 }
