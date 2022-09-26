@@ -10,7 +10,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         addtwo = 0
     else:
         addtwo = tuple_b[0]
-        f = addone + addtwo
+    f = addone + addtwo
     if len(tuple_a) < 2 or tuple_a[1] is None:
         addone = 0
     else:
