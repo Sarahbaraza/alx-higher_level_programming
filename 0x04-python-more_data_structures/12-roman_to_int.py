@@ -11,4 +11,3 @@ def roman_to_int(roman_string: str):
         else:
             rep -= numbers[i]
     return rep
-
