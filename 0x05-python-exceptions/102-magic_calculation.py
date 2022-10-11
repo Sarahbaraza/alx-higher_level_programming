@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# 102-magic_calculation.py
-# Immaculate Sarah Baraza
 
 
 def magic_calculation(a, b):
